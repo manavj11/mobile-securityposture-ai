@@ -110,6 +110,37 @@ python app.py
 
 ---
 
+## Experimenting with Device Profiles
+
+The project uses mocked mobile SDK data to simulate different device configurations.
+
+To analyze a different device, edit the profile name in `app.py`:
+
+```python
+profile = "developer"
+```
+
+Available profiles include:
+
+- `safe`
+- `public_wifi`
+- `developer`
+- `rooted`
+
+You can also modify any profile in `mock_devices.py` to observe how the anomaly score changes.
+
+For example, changing the following values:
+
+```python
+"vpn_enabled": True,
+"play_protect": True,
+"usb_debugging": False,
+"unknown_sources": False,
+```
+
+should generally produce a lower-risk result.
+
+
 ## Current Status
 
 Implemented
