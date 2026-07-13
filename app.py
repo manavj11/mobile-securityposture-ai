@@ -36,12 +36,15 @@ def main():
         print("\nRecommendations")
         print("-" * 60)
 
-        recommendation = get_recommendation(
-            device=device,
-            risk=result["risk"],
-        )
+        try:
+            recommendation = get_recommendation(
+                device=device,
+                risk=result["risk"],
+            )
+            print(recommendation)
 
-        print(recommendation)
+        except Exception as e:
+            print(f"LLM unavailable: {e}")
 
     else:
 
