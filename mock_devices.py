@@ -42,17 +42,30 @@ PUBLIC_WIFI_DEVICE = {
 }
 
 
+# DEVELOPER_DEVICE = {
+#     "os_version": 13,
+#     "network": "private_wifi",
+#     "vpn_enabled": False,
+#     "developer_mode": True,
+#     "rooted": False,
+#     "bootloader_unlocked": False,
+#     "screen_lock": True,
+#     "play_protect": False,
+#     "usb_debugging": True,
+#     "unknown_sources": True,
+# }
+
 DEVELOPER_DEVICE = {
     "os_version": 13,
     "network": "private_wifi",
-    "vpn_enabled": False,
+    "vpn_enabled": True,
     "developer_mode": True,
     "rooted": False,
     "bootloader_unlocked": False,
     "screen_lock": True,
-    "play_protect": False,
-    "usb_debugging": True,
-    "unknown_sources": True,
+    "play_protect": True,
+    "usb_debugging": False,
+    "unknown_sources": False,
 }
 
 

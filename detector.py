@@ -73,10 +73,10 @@ class DeviceDetector:
         More negative means more anomalous.
         """
 
-        if score > -0.05:
+        if score > -0.62:
             return "Low"
 
-        if score > -0.12:
+        if score > -0.70:
             return "Medium"
 
         return "Critical"

@@ -57,12 +57,13 @@ def generate_normal_devices(samples: int = 500) -> np.ndarray:
             p=[0.9, 0.1],
         )
 
-        rooted = 0
-        bootloader = 0
+        rooted = np.random.choice([0, 1], p=[0.98, 0.02])
 
-        screen_lock = 1
+        bootloader = np.random.choice([0, 1], p=[0.97, 0.03])
 
-        play_protect = 1
+        screen_lock = np.random.choice([0, 1], p=[0.95, 0.05])
+
+        play_protect = np.random.choice([0, 1], p=[0.95, 0.05])
 
         usb_debugging = np.random.choice(
             [0, 1],

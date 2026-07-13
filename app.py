@@ -5,6 +5,7 @@ CLI entry point.
 from pprint import pprint
 
 from detector import DeviceDetector
+from llm import get_recommendation
 from mock_devices import get_device
 
 
@@ -12,7 +13,7 @@ def main():
 
     detector = DeviceDetector()
 
-    profile = "rooted"
+    profile = "developer"
 
     device = get_device(profile)
 
@@ -27,9 +28,26 @@ def main():
     print("\nAnalysis")
     print("-" * 60)
 
-    print(f"Anomaly Score : {result['score']}")
-    print(f"Risk Level    : {result['risk']}")
-    print(f"LLM Allowed   : {result['allow_llm']}")
+    print(f"Score        : {result['score']}")
+    print(f"Risk         : {result['risk']}")
+
+    if result["allow_llm"]:
+
+        print("\nRecommendations")
+        print("-" * 60)
+
+        recommendation = get_recommendation(
+            device=device,
+            risk=result["risk"],
+        )
+
+        print(recommendation)
+
+    else:
+
+        print("\nRecommendations")
+        print("-" * 60)
+        print("Manual review required.")
 
 
 if __name__ == "__main__":
